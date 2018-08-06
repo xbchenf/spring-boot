@@ -1,0 +1,39 @@
+server:
+  port: 5555
+spring:
+  application:
+    name: springcloud-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
+  instance:
+    prefer-ip-address: true
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+zuul:
+    host:
+        connect-timeout-millis: 3000
+        socket-timeout-millis: 3000
+    sensitive-headers: #设置全局sensitiveHeaders为空，覆盖默认值，将cookie等信息传递到微服务中
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeout-in-milliseconds: 3000
+#路由规则：
+#http://网关IP地址:网关端口号/微服务ID/**
+#会被转发到 =》http:// 微服务_ip: 微服务_port/**
+#例如：http://localhost:5555/springcloud-service-provider1/user/query/5
+#转到http://localhost:8081/user/query/5
+#zuul.ThrowExceptionFilter.pre.disable=true  禁用过滤器
+
+#过滤head
+#zuul:
+#  routes:
+#    provide-user:
+#     sensitive-headers: Cookie,Set-Cookie
+#  ignored-headers: Authorization #忽略的不会传递到微服务

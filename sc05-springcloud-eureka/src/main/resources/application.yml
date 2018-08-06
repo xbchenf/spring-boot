@@ -1,0 +1,28 @@
+#java -jar springbcloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+#java -jar springbcloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
+spring:
+  application:
+    name: springbcloud-eureka
+---
+spring:
+  profiles: peer1                                 # 指定profile=peer1
+server:
+  port: 1111
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:1112/eureka/      # 将自己注册到peer2这个Eureka上面去
+
+---
+spring:
+  profiles: peer2
+server:
+  port: 1112
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:1111/eureka/
