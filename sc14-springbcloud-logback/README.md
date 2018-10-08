@@ -1,9 +1,8 @@
 # spring-cloud
 
-spring boot /spring cloud项目实战 之 springbcloud-stream-kafka-consumer
+spring boot /spring cloud项目实战 之 springbcloud-logback
 
-springbcloud stream 整合kafka作为消息中间件
-要先安装kafka、zk
+默认日志框架配置
 
 4.本demo涉及的相关技术、框架：
 1>.springboot

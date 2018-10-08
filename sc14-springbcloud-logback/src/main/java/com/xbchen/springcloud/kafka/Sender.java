@@ -14,9 +14,9 @@ public class Sender {
 
     private static Logger log = LoggerFactory.getLogger(Sender.class);
 
-    private final KafkaStreams kafkaStreams;
+    private final kafkaStreams kafkaStreams;
 
-    public Sender(KafkaStreams kafkaStreams) {
+    public Sender(kafkaStreams kafkaStreams) {
         this.kafkaStreams = kafkaStreams;
     }
 

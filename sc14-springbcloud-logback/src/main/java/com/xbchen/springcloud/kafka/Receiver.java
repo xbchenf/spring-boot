@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class Receiver {
     private static Logger logger = LoggerFactory.getLogger(Receiver.class);
 
-    @StreamListener(KafkaStreams.INPUT)
+    @StreamListener(kafkaStreams.INPUT)
     public void handleGreetings(@Payload Message msg) {
         logger.info("Stream Listener Received: {}", msg.toString());
     }

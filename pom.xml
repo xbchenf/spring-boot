@@ -16,8 +16,8 @@
 	<packaging>pom</packaging>
 
     <modules>
-		<!--<module>sc01-springboot-helloworld</module>
-		<module>sc02-springboot-springmvc-mybatis</module>
+		<module>sc01-springboot-helloworld</module>
+		<!--<module>sc02-springboot-springmvc-mybatis</module>
 		<module>sc03-springboot-junit</module>
 		<module>sc04-springboot-swagger2</module>-->
 		<module>sc05-springcloud-eureka</module>
@@ -29,5 +29,7 @@
 		<module>sc-11-web</module>-->
 		<module>sc12-springbcloud-stream-kafka-provider</module>
 		<module>sc13-springbcloud-stream-kafka-consumer</module>
+		<module>sc14-springbcloud-logback</module>
+		<module>sc15-springboot-http-https</module>
 	</modules>
 </project>

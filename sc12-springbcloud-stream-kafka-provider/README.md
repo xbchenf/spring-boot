@@ -3,6 +3,7 @@
 spring boot /spring cloud项目实战 之 springbcloud-stream-kafka-provider
 
 springbcloud stream 整合kafka作为消息中间件
+要先安装kafka、zk
 
 4.本demo涉及的相关技术、框架：
 1>.springboot
